@@ -418,7 +418,7 @@
                   continue;
                 }
 
-                if (energy[_key].spent + sharing[_key].reduce((memo, m) => {return m + memo}, 0) > energy[_key].generated) {
+                if (energy[_key].spent > energy[_key].generated + sharing[_key].reduce((memo, m) => {return m + memo}, 0)) {
                   const share = Math.min(energy[_key].spent - energy[_key].generated, stock);
                   sharing[_key].push(share);
                   stock -= share;
