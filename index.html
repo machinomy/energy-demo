@@ -1,0 +1,458 @@
+<!doctype html>
+<html>
+  <link href="//fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italic&amp;subset=all" rel="stylesheet" type="text/css">
+  <style>
+    .house-container {
+      position: absolute;
+      z-index: 2;
+    }
+    .house-container.one {
+      top: 20%;
+    }
+    .house-container.two {
+      right: 0;
+      top: 20%;
+    }
+    .house-container.three {
+      right: 0;
+      bottom: 0;
+    }
+    .house-container.four {
+      bottom: 0;
+    }
+    .roof {
+      width: 0;
+      height: 0;
+      border-left: 100px solid transparent;
+      border-right: 104px solid transparent;
+      border-bottom: 100px solid black;
+    }
+    .house {
+      border: 1px solid black;
+      width: 200px;
+      height: 200px;
+      position: relative;
+      background-color: white;
+    }
+    .energy {
+      display: block;
+      width: 50%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+      transition: height 1s;
+    }
+    .energy .text {
+      transform: rotate(90deg);
+      transform-origin: left top 0;
+    }
+    .spent {
+      left: 0;
+      height: 0;
+      background-color: #2196F3;
+    }
+    .generated {
+      right: 0;
+      height: 0;
+      background-color: #8BC34A;
+    }
+    .divider {
+      position: absolute;
+      left: 50%;
+      width: 1px;
+      height: 100%;
+      z-index: 2;
+      background-color: black;
+    }
+    .money {
+      font-family: Roboto, serif;
+      width: 200px;
+      text-align: center;
+      position: relative;
+      height: 20px;
+    }
+    .money .text {
+      display: block;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: opacity 1s;
+    }
+    .station {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      background-color: #2196F3;
+      position: absolute;
+      font-size: 50px;
+      /*top: 10%;*/
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+    .station .text {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .line {
+      position: absolute;
+      background-color: #FF7043;
+      z-index: 1;
+      transform-origin: top left 0;
+      /*display: flex;*/
+      /*justify-content: space-between;*/
+    }
+    .line.st {
+      background-color: #EC407A;
+    }
+    .arrow {
+      position: absolute;
+      left: 0;
+      transform: translateY(-50%);
+      margin-top: 1px;
+      animation-timing-function: linear;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      display: none;
+    }
+
+    .in .arrow {
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-right: 9px solid #FF7043;
+      animation-name: in;
+      display: inline-block;
+    }
+
+    .out .arrow {
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 9px solid #FF7043;
+      animation-name: out;
+      display: inline-block;
+    }
+
+    .in.st .arrow {
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-right: 9px solid #EC407A;
+    }
+
+    .out.st .arrow {
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 9px solid #EC407A;
+    }
+
+    @keyframes in {
+      from {
+        left: 100%;
+      }
+
+      to {
+        left: 0;
+      }
+    }
+
+    @keyframes out {
+      from {
+        left: 0;
+      }
+
+      to {
+        left: 100%;
+      }
+    }
+
+
+  </style>
+  <body>
+    <div class="house-container one">
+      <div class="money">
+        <span class="text" style="opacity: 1">10000&#8381;</span>
+        <span class="text" style="opacity: 0;">28473&#8381;</span>
+      </div>
+      <div class="roof"></div>
+      <div class="house">
+        <div class="divider"></div>
+        <div class="energy spent"></div>
+        <div class="energy generated"></div>
+      </div>
+    </div>
+
+    <div class="house-container two">
+      <div class="money">
+        <span class="text" style="opacity: 1">10000&#8381;</span>
+        <span class="text" style="opacity: 0;">28473&#8381;</span>
+      </div>
+      <div class="roof"></div>
+      <div class="house">
+        <div class="divider"></div>
+        <div class="energy spent"></div>
+        <div class="energy generated"></div>
+      </div>
+    </div>
+
+
+    <div class="house-container three">
+      <div class="money">
+        <span class="text" style="opacity: 1">10000&#8381;</span>
+        <span class="text" style="opacity: 0;">28473&#8381;</span>
+      </div>
+      <div class="roof"></div>
+      <div class="house">
+        <div class="divider"></div>
+        <div class="energy spent"></div>
+        <div class="energy generated"></div>
+      </div>
+    </div>
+
+
+    <div class="house-container four">
+      <div class="money">
+        <span class="text" style="opacity: 1">10000&#8381;</span>
+        <span class="text" style="opacity: 0;">28473&#8381;</span>
+      </div>
+      <div class="roof"></div>
+      <div class="house">
+        <div class="divider"></div>
+        <div class="energy spent"></div>
+        <div class="energy generated"></div>
+      </div>
+    </div>
+
+    <div class="line one-two">
+      <div class="arrow" style="animation-delay: 0s"></div>
+      <div class="arrow" style="animation-delay: 1s"></div>
+      <div class="arrow" style="animation-delay: 2s"></div>
+      <div class="arrow" style="animation-delay: 3s"></div>
+      <div class="arrow" style="animation-delay: 4s"></div>
+      <div class="arrow" style="animation-delay: 5s"></div>
+    </div>
+    <div class="line one-three">
+      <div class="arrow" style="animation-delay: 0s"></div>
+      <div class="arrow" style="animation-delay: 1s"></div>
+      <div class="arrow" style="animation-delay: 2s"></div>
+      <div class="arrow" style="animation-delay: 3s"></div>
+      <div class="arrow" style="animation-delay: 4s"></div>
+      <div class="arrow" style="animation-delay: 5s"></div>
+    </div>
+    <div class="line one-four">
+      <div class="arrow" style="animation-delay: 0s"></div>
+      <div class="arrow" style="animation-delay: 1s"></div>
+      <div class="arrow" style="animation-delay: 2s"></div>
+      <div class="arrow" style="animation-delay: 3s"></div>
+      <div class="arrow" style="animation-delay: 4s"></div>
+      <div class="arrow" style="animation-delay: 5s"></div>
+    </div>
+    <div class="line two-three">
+      <div class="arrow" style="animation-delay: 0s"></div>
+      <div class="arrow" style="animation-delay: 1s"></div>
+      <div class="arrow" style="animation-delay: 2s"></div>
+      <div class="arrow" style="animation-delay: 3s"></div>
+      <div class="arrow" style="animation-delay: 4s"></div>
+      <div class="arrow" style="animation-delay: 5s"></div>
+    </div>
+    <div class="line two-four">
+      <div class="arrow" style="animation-delay: 0s"></div>
+      <div class="arrow" style="animation-delay: 1s"></div>
+      <div class="arrow" style="animation-delay: 2s"></div>
+      <div class="arrow" style="animation-delay: 3s"></div>
+      <div class="arrow" style="animation-delay: 4s"></div>
+      <div class="arrow" style="animation-delay: 5s"></div>
+    </div>
+    <div class="line three-four">
+      <div class="arrow" style="animation-delay: 0s"></div>
+      <div class="arrow" style="animation-delay: 1s"></div>
+      <div class="arrow" style="animation-delay: 2s"></div>
+      <div class="arrow" style="animation-delay: 3s"></div>
+      <div class="arrow" style="animation-delay: 4s"></div>
+      <div class="arrow" style="animation-delay: 5s"></div>
+    </div>
+
+    <div class="line st one-station">
+      <div class="arrow" style="animation-delay: 0s"></div>
+      <div class="arrow" style="animation-delay: 1s"></div>
+      <div class="arrow" style="animation-delay: 2s"></div>
+      <div class="arrow" style="animation-delay: 3s"></div>
+      <div class="arrow" style="animation-delay: 4s"></div>
+      <div class="arrow" style="animation-delay: 5s"></div>
+    </div>
+    <div class="line st two-station">
+      <div class="arrow" style="animation-delay: 0s"></div>
+      <div class="arrow" style="animation-delay: 1s"></div>
+      <div class="arrow" style="animation-delay: 2s"></div>
+      <div class="arrow" style="animation-delay: 3s"></div>
+      <div class="arrow" style="animation-delay: 4s"></div>
+      <div class="arrow" style="animation-delay: 5s"></div>
+    </div>
+    <div class="line st three-station">
+      <div class="arrow" style="animation-delay: 0s"></div>
+      <div class="arrow" style="animation-delay: 1s"></div>
+      <div class="arrow" style="animation-delay: 2s"></div>
+      <div class="arrow" style="animation-delay: 3s"></div>
+      <div class="arrow" style="animation-delay: 4s"></div>
+      <div class="arrow" style="animation-delay: 5s"></div>
+    </div>
+    <div class="line st four-station">
+      <div class="arrow" style="animation-delay: 0s"></div>
+      <div class="arrow" style="animation-delay: 1s"></div>
+      <div class="arrow" style="animation-delay: 2s"></div>
+      <div class="arrow" style="animation-delay: 3s"></div>
+      <div class="arrow" style="animation-delay: 4s"></div>
+      <div class="arrow" style="animation-delay: 5s"></div>
+    </div>
+
+    <div class="station"><span class="text">&#9889;</span></div>
+    <script>
+      "use strict";
+      window.addEventListener("load", () => {
+        let money = 10000;
+        let moneys = {
+          one: 10000,
+          two: 10000,
+          three: 10000,
+          four: 10000
+        };
+        let sharing = {
+          one: [],
+          two: [],
+          three: [],
+          four: []
+        };
+        const energy = {
+          one: {
+            spent: 0,
+            generated: 0
+          },
+          two: {
+            spent: 0,
+            generated: 0
+          },
+          three: {
+            spent: 0,
+            generated: 0
+          },
+          four: {
+            spent: 0,
+            generated: 0
+          }
+        };
+        function drawLine(from, to, line) {
+          const clientRect = to.getBoundingClientRect();
+          const center = {
+            x: clientRect.left + clientRect.width / 2,
+            y: clientRect.top + clientRect.height / 2
+          };
+          const stationRect = from.getBoundingClientRect();
+          const stationCenter = {
+            x: stationRect.left + stationRect.width / 2,
+            y: stationRect.top + stationRect.height / 2
+          };
+          const vCathetus = Math.abs(center.x - stationCenter.x);
+          const hCathetus = Math.abs(center.y - stationCenter.y);
+          const length = Math.sqrt(Math.pow(vCathetus, 2) + Math.pow(hCathetus, 2));
+          let angle = 0;
+          if (center.x <= stationCenter.x && center.y <= stationCenter.y) {
+            angle = Math.acos(vCathetus / length) / Math.PI * 180;
+          }
+          if (center.x > stationCenter.x && center.y <= stationCenter.y) {
+            angle = Math.asin(vCathetus / length) / Math.PI * 180 + 90;
+          }
+          if (center.x <= stationCenter.x && center.y > stationCenter.y) {
+            angle = Math.asin(vCathetus / length) / Math.PI * 180 - 90;
+          }
+          if (center.x > stationCenter.x && center.y > stationCenter.y) {
+            angle = Math.acos(vCathetus / length) / Math.PI * 180 + 180;
+          }
+          const stationLine = line;
+          stationLine.style.height = '3px';
+          stationLine.style.width = `${length}px`;
+          stationLine.style.transform = `rotate(${angle}deg)`;
+          stationLine.style.top = `${center.y}px`;
+          stationLine.style.left = `${center.x}px`;
+          return stationLine;
+        }
+        const containers = Object.keys(moneys);
+        [].forEach.call(document.querySelectorAll('.house-container'), (container) => {
+          const id = [...container.classList].find((m) => containers.includes(m));
+          [].forEach.call(document.querySelectorAll('.line:not(.st)'), (nextElement) => {
+            let nextId = [...nextElement.classList].filter((m) => m !== 'line')[0];
+            if (!nextId.startsWith(id)) {
+              return;
+            }
+            nextId = nextId.replace(`${id}-`, '');
+            const line = document.querySelector(`.line.${id}-${nextId}`);
+            drawLine(container, document.querySelector(`.house-container.${nextId}`), line)
+          });
+
+          drawLine(container, document.querySelector('.station'), document.querySelector(`.line.${id}-station`));
+        });
+        const simulation = () => {
+          for (let key in moneys) {
+            [].forEach.call(document.querySelectorAll('.line'), (el) => {
+              el.classList.remove('out');
+              el.classList.remove('in');
+            });
+            sharing[key] = [];
+            energy[key].spent = Math.round(Math.random() * 100);
+            energy[key].generated = Math.round(Math.random() * 100);
+          }
+          for (let key in moneys) {
+            if (energy[key].spent < energy[key].generated) {
+              let stock = energy[key].generated - energy[key].spent;
+              for (let _key in moneys) {
+                if (_key == key) {
+                  continue;
+                }
+
+                if (energy[_key].spent + sharing[_key].reduce((memo, m) => {return m + memo}, 0) > energy[_key].generated) {
+                  const share = Math.min(energy[_key].spent - energy[_key].generated, stock);
+                  sharing[_key].push(share);
+                  stock -= share;
+                  const sortedKeys = [key, _key].sort((a, b) => containers.indexOf(a) - containers.indexOf(b));
+                  document.querySelector(`.line.${sortedKeys.join('-')}`).classList.add(sortedKeys[0] === key ? 'in' : 'out')
+                }
+              }
+            }
+            moneys[key] += energy[key].generated - energy[key].spent;
+            const container = document.querySelector(`.house-container.${key}`);
+            container.querySelector('.house .spent').style.height = `${energy[key].spent}%`;
+            container.querySelector('.house .generated').style.height = `${energy[key].generated}%`;
+            [].forEach.call(container.querySelectorAll('.money .text'), (el) => {
+              if (el.style.opacity == 0) {
+                el.innerHTML = `${moneys[key]}&#8381`;
+                el.style.opacity = 1;
+              } else {
+                el.style.opacity = 0;
+              }
+            });
+          }
+          for (let key in moneys) {
+            const stationLine = document.querySelector(`.line.${key}-station`);
+            if (energy[key].spent > energy[key].generated + sharing[key].reduce((memo, m) => {return m + memo}, 0)) {
+              stationLine.classList.add('out');
+            } else {
+              stationLine.classList.remove('out');
+            }
+          }
+        };
+        simulation();
+        //noinspection JSUnresolvedFunction
+        setInterval(simulation, 5000);
+      });
+    </script>
+  </body>
+</html>
