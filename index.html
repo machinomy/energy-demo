@@ -11,17 +11,19 @@
     }
     .house-container.one {
       top: 20%;
+      left: 10%;
     }
     .house-container.two {
-      right: 0;
+      right: 10%;
       top: 20%;
     }
     .house-container.three {
-      right: 0;
-      bottom: 0;
+      right: 10%;
+      bottom: 10%;
     }
     .house-container.four {
-      bottom: 0;
+      bottom: 10%;
+      left: 10%;
     }
     .roof {
       width: 0;
@@ -109,14 +111,15 @@
     .station {
       width: 200px;
       height: 200px;
-      border: 1px solid black;
-      background-color: #2196F3;
       position: absolute;
       font-size: 50px;
       /*top: 10%;*/
       left: 50%;
       transform: translateX(-50%);
       z-index: 3;
+      background-image: url(images/plant.svg);
+      background-position: 50% 25px;
+      background-repeat: no-repeat;
     }
     .station .text {
       display: block;
@@ -348,7 +351,7 @@
       <div class="arrow" style="animation-delay: 5s"></div>
     </div>
 
-    <div class="station"><span class="text">&#9889;</span></div>
+    <div class="station"><span class="text"></span></div>
     <script>
       "use strict";
       window.addEventListener("load", () => {
