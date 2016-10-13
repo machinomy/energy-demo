@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="180 173 311 243" width="311pt" height="243pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <style type="text/css">
+    <![CDATA[
+      #glow {
+        filter: url(#blur-filter);
+      }
+      @keyframes color-change {
+          0% { fill: #000000; }
+          100% { fill: #F15C1E; }
+      }
+      .color-change {
+        animation-name: color-change;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
+      }
+    ]]>
+  </style>
+  <metadata> Produced by OmniGraffle 7.0.2 
+    <dc:date>2016-10-13 00:20:53 +0000</dc:date>
+  </metadata>
+  <defs/>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>Canvas 1</title>
+    <g>
+      <title>Layer 1</title>
+      <filter id="blur-filter">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+      </filter>
+      <path id="glow" d="M 457.54895 292.02853 L 342.6364 190.17421 L 335.09162 183.5 L 327.54686 190.17421 L 306.0733 209.03613 L 306.0733 208.45576 L 260.8047 208.45576 L 260.8047 249.0814 L 212.6343 292.02853 L 190 312.05118 L 233.81767 312.05118 L 233.81767 405.2 L 436.3656 405.2 L 436.3656 312.05118 L 480.18325 312.05118 Z M 424.75825 300.44385 L 424.75825 393.59267 L 245.425 393.59267 L 245.425 300.44385 L 220.46924 300.44385 L 272.70223 254.3047 L 272.70223 220.0631 L 295.04634 220.0631 L 295.04634 234.86243 L 335.09162 198.87971 L 450.0042 300.73403 L 424.75825 300.73403 Z" fill="none" />
+      <path d="M 268.5 215.5 L 300.5 218.5 L 332.5 190.5 L 463.5 304.5 L 426.5 307.5 L 430.5 397.5 L 239.5 395.5 L 242 304.35 L 201.5 305.35 L 240.5 275.5 L 265.5 250.5 Z" fill="white"/>
+      <path id="contour" d="M 457.54895 292.02853 L 342.6364 190.17421 L 335.09162 183.5 L 327.54686 190.17421 L 306.0733 209.03613 L 306.0733 208.45576 L 260.8047 208.45576 L 260.8047 249.0814 L 212.6343 292.02853 L 190 312.05118 L 233.81767 312.05118 L 233.81767 405.2 L 436.3656 405.2 L 436.3656 312.05118 L 480.18325 312.05118 Z M 424.75825 300.44385 L 424.75825 393.59267 L 245.425 393.59267 L 245.425 300.44385 L 220.46924 300.44385 L 272.70223 254.3047 L 272.70223 220.0631 L 295.04634 220.0631 L 295.04634 234.86243 L 335.09162 198.87971 L 450.0042 300.73403 L 424.75825 300.73403 Z" fill="black"/>
+    </g>
+  </g>
+</svg>
