@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="257 458 291 222" width="291pt" height="222pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <style type="text/css">
+    <![CDATA[
+      //.svg_house_contour { filter: url(#pictureFilter); }
+    ]]>
+  </style>
+  <metadata> Produced by OmniGraffle 7.0.2 
+    <dc:date>2016-10-12 23:51:09 +0000</dc:date>
+  </metadata>
+  <defs/>
+  <filter id="pictureFilter" >
+    <feGaussianBlur stdDeviation="5" />
+  </filter>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>Canvas 1</title>
+    <g>
+      <title>Layer 1</title>
+        <path id="glow" d="M 524.54895 566.52853 L 409.6364 464.6742 L 402.0916 458 L 394.54686 464.6742 L 373.0733 483.5361 L 373.0733 482.95576 L 327.8047 482.95576 L 327.8047 523.5814 L 279.6343 566.52853 L 257 586.5512 L 300.81767 586.5512 L 300.81767 679.7 L 503.3656 679.7 L 503.3656 586.5512 L 547.18325 586.5512 Z M 491.75825 574.94385 L 491.75825 668.0927 L 312.425 668.0927 L 312.425 574.94385 L 287.46924 574.94385 L 339.70223 528.8047 L 339.70223 494.5631 L 362.04634 494.5631 L 362.04634 509.36243 L 402.0916 473.3797 L 517.0042 575.234 L 491.75825 575.234 Z" fill="none" filter="url(#blur-filter)" />
+      <path id="last" d="M 524.54895 566.52853 L 409.6364 464.6742 L 402.0916 458 L 394.54686 464.6742 L 373.0733 483.5361 L 373.0733 482.95576 L 327.8047 482.95576 L 327.8047 523.5814 L 279.6343 566.52853 L 257 586.5512 L 300.81767 586.5512 L 300.81767 679.7 L 503.3656 679.7 L 503.3656 586.5512 L 547.18325 586.5512 Z M 491.75825 574.94385 L 491.75825 668.0927 L 312.425 668.0927 L 312.425 574.94385 L 287.46924 574.94385 L 339.70223 528.8047 L 339.70223 494.5631 L 362.04634 494.5631 L 362.04634 509.36243 L 402.0916 473.3797 L 517.0042 575.234 L 491.75825 575.234 Z" fill="black"/>
+    </g>
+  </g>
+</svg>
